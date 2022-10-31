@@ -1,8 +1,10 @@
 .scrollTextOnHighlight {
     tv-text-highlight-style: marquee-on-highlight;
+    color: #ff2222;
 }
 .showAndScrollTextOnHighlight {
     tv-text-highlight-style: marquee-and-show-on-highlight;
+    color: #ff2222;
 }
 .tile {
     width: 259;
@@ -20,5 +22,5 @@
     tv-text-style: none;
     color: rgba(68, 68, 68, 0.5);
     font-size: 38;
-    tv-highlight-color: rgb(74, 144, 226);
+    tv-highlight-color: #ff2222;
 }

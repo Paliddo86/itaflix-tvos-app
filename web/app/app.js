@@ -25,11 +25,11 @@ ATV.start({
 			attributes: { autoHighlight: true }
 		}, {
 			id: 'movies',
-			name: 'Movies',
+			name: 'Film',
 			page: MoviesPage
 		}, {
 			id: 'tvshows',
-			name: 'TV Shows',
+			name: 'Serie TV',
 			page: TvShowsPage
 		}]
 	},
@@ -40,7 +40,7 @@ ATV.start({
 		status: {
 			'404': () => errorTpl({
 				title: '404',
-				message: 'Page cannot be found!'
+				message: 'Pagina non trovata!'
 			}),
 			'500': () => errorTpl({
 				title: '500',

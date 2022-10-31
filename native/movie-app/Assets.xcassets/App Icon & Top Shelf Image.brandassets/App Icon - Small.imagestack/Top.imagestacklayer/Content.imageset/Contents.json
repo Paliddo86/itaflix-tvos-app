@@ -2,7 +2,12 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "atvjs_400x240.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {
