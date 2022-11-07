@@ -1,22 +1,22 @@
 <document>
-   <catalogTemplate theme="light">
+   <catalogTemplate theme="dark" class="darkBackgroundColor">
 	  <banner>
-		 <title class="text-dark">Movies</title>
+		 <title class="textRed">Film</title>
 	  </banner>
 	  <list>
 		 <section>
 			<listItemLockup>
-				<title class="text-highlight-primary scrollTextOnHighlight">All Movies</title>
+				<title class="text-highlight-primary scrollTextOnHighlight">Recenti</title>
 				<decorationImage src="{{img_url 'chevron.png'}}" width="14" height="22"/>
 				<relatedContent>
 					<grid>
-					<section>
-						{{#each results}}
-						<lockup data-href-page="asset" data-href-page-options="{{toJSON this }}">
-							<img class="tile_compact" src="{{{poster_url poster_path }}}"/>
-							<title class="showAndScrollTextOnHighlight">{{ title }}</title>
-						</lockup>
-						{{/each}}
+					<section binding="items: {movies}">
+						<prototypes>
+							<lockup prototype="Movie">
+								<img class="tile_compact" binding="@src: {small_poster};"/>
+								<title class="showAndScrollTextOnHighlight" binding="textContent: {title};"></title>
+							</lockup>
+						</prototypes>
 					</section>
 				  </grid>
 			   </relatedContent>

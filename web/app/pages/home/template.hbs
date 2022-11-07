@@ -1,8 +1,8 @@
 <document>
-	<stackTemplate theme="black">
+	<stackTemplate theme="dark" class="darkBackgroundColor">
 		<collectionList>
 			<shelf>
-				<header><title>Popular Movies</title></header>
+				<header class="homeCategory"><title >Ultimi Film aggiunti</title></header>
 				<section>
 					{{#each movies }}
 					<lockup data-href-page="movie-details" data-href-page-options="{{toJSON this }}">
@@ -13,7 +13,7 @@
 				</section>
 			</shelf>
 			<shelf>
-				<header><title>Popular TV Shows</title></header>
+				<header><title class="homeCategory">Ultime Serie TV aggiornate</title></header>
 				<section>
 					{{#each tvShows }}
 					<lockup data-href-page="tvshow-details" data-href-page-options="{{toJSON this }}">

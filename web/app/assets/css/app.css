@@ -1,6 +1,7 @@
 .scrollTextOnHighlight {
     tv-text-highlight-style: marquee-on-highlight;
     color: #ff2222;
+    width: min-content;
 }
 .showAndScrollTextOnHighlight {
     tv-text-highlight-style: marquee-and-show-on-highlight;
@@ -11,8 +12,8 @@
     height: 375;
 }
 .tile_compact {
-    width: 250;
-    height: 376;
+    width: 180;
+    height: 250;
 }
 .tile_large {
     width: 334;
@@ -20,7 +21,19 @@
 }
 .text-highlight-primary {
     tv-text-style: none;
-    color: rgba(68, 68, 68, 0.5);
+    color: #ff2222;
     font-size: 38;
     tv-highlight-color: #ff2222;
+}
+
+.darkBackgroundColor {
+    background-color: #000000;
+}
+
+.homeCategory {
+    color: #ff2222;
+}
+
+.text-red {
+    color: #ff2222;
 }

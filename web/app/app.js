@@ -24,11 +24,11 @@ ATV.start({
 			page: HomePage,
 			attributes: { autoHighlight: true }
 		}, {
-			id: 'movies',
+			id: 'movies-page',
 			name: 'Film',
 			page: MoviesPage
 		}, {
-			id: 'tvshows',
+			id: 'tvshows-page',
 			name: 'Serie TV',
 			page: TvShowsPage
 		}]
