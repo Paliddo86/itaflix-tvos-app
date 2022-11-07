@@ -1,6 +1,7 @@
 import ATV from 'atvjs';
 import template from './template.hbs';
 import BACKEND from 'lib/api-backend';
+import errorTpl from 'shared/templates/error.hbs';
 
 var moviesCount = 0;
 var loadedMoviePage = 1;
@@ -49,7 +50,7 @@ var MoviesPage = ATV.Page.create({
           fillMovieCollection(xhr.response.MovieList);
         }, (xhr) => {
           // error
-          console.log(xhr.response);
+          ATV.Navigation.presentModal(errorTpl({title: "Errore", message: "Errore nel recupero dei film, controllare il server"}));
         })
   },
   onHighlight(event) {
@@ -64,7 +65,8 @@ var MoviesPage = ATV.Page.create({
          fillMovieCollection(xhr.response.MovieList);
         }, (xhr) => {
           // error
-          console.log(xhr.response);
+          ATV.Navigation.presentModal(errorTpl({title: "Errore", message: "Errore nel recupero dei film, controllare il server"}));
+
         })
     }
   }
