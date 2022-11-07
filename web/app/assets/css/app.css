@@ -37,3 +37,8 @@
 .text-red {
     color: #ff2222;
 }
+
+.text-justified {
+    width: "70%";
+    height: "100%";
+}

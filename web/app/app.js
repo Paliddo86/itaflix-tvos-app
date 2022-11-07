@@ -7,6 +7,7 @@ import css from 'assets/css/app.css';
 // shared templates
 import loaderTpl from 'shared/templates/loader.hbs';
 import errorTpl from 'shared/templates/error.hbs';
+import descriptiveTpl from 'shared/templates/descriptive.hbs';
 
 // pages
 import HomePage from 'pages/home';
@@ -33,9 +34,23 @@ ATV.start({
 			page: TvShowsPage
 		}]
 	},
+	// global handlers
+	handlers: {
+		select: {
+			showMore(e) {
+				let element = e.target;
+				let showDescription = element.getAttribute('allowsZooming');
+
+				if (showDescription) {
+					ATV.Navigation.presentModal(descriptiveTpl({message: element.textContent}));
+				}
+			}
+		}
+	},
 	templates: {
 		loader: loaderTpl,
 		error: errorTpl,
+		descriptive: descriptiveTpl,
 		// status level error handlers
 		status: {
 			'404': () => errorTpl({
