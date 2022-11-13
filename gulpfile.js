@@ -18,7 +18,7 @@ var presentation = 'presentation/'
 gulp.task('scripts', function() {
     return gulp.src(webpackConfig.entry.app)
         .pipe($.webpackStream(webpackConfig))
-        .pipe(isProduction ? $.uglify({preserveComments: 'license'}) : $.util.noop())
+        .pipe(isProduction ? $.uglify() : $.util.noop())
         .pipe(isProduction ? $.stripDebug() : $.util.noop())
         .pipe(gulp.dest(dist))
         .pipe($.size({

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp",
     "presentation": "gulp presentation --p",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "prod": "gulp --t production"
   },
   "resolutions": {
     "graceful-fs": "^4.2.10"

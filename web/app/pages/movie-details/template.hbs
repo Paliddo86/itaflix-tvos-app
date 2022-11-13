@@ -1,18 +1,19 @@
 <document>
-   <productBundleTemplate>
+   <productBundleTemplate theme="dark">
 	  <banner>
 		 <stack>
 			<title>{{ title }}</title>
 			<row>
-				<text><badge src="resource://tomato-fresh"/> {{toFixed popularity }}%</text>
-				<text>{{duration runtime }}</text>
-				<text>{{genres genres }}</text>
-				<text>{{ release_date }}</text>
+				{{!-- <text><badge src="resource://tomato-fresh"/> {{toFixed popularity }}%</text> --}}
+				<text>Durata: {{duration runtime }}</text>
+				<text>Genere: {{ genre }}</text>
+				<text>Anno: {{ year }}</text>
+				<text>Lingua: {{ lang }}</text>
 			</row>
-			<row>
+			{{!-- <row>
 				<text>{{ tagline }}</text>
-			</row>
-			<description allowsZooming="true" moreLabel="more">{{ overview }}</description>
+			</row> --}}
+			<description allowsZooming="true" moreLabel="more">{{ description }}</description>
 			<row>
 				<buttonLockup data-href-page="play" data-href-page-options="{{toJSON this }}">
 					<badge src="resource://button-play" />
@@ -24,15 +25,15 @@
 				</buttonLockup>
 			</row>
 		 </stack>
-		 <heroImg src="{{poster_url poster_path }}"/>
+		 <heroImg src="{{big_poster }}"/>
 		</banner>
-		<shelf>
+		{{!-- <shelf>
 			<header>
 				<title>Related Movies</title>
 			</header>
 			<section>
 				<lockup></lockup>
 			</section>
-		</shelf>
+		</shelf> --}}
    </productBundleTemplate>
 </document>

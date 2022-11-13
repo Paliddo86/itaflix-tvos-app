@@ -23,7 +23,7 @@ const buildUrl = (path, params) => toUrl(`${backendUrl}${path}`, params);
 
 const backend = {
 	movies(page) {  return buildUrl(`movies/${page}`, {}); },
-	movieDetails(id) { return buildUrl(`movie/${id}`); }
+	movieDetails(id) { return buildUrl(`movie/info/${id}`); }
 }
 
 export default backend;

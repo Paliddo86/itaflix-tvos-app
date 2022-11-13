@@ -2,8 +2,7 @@ import ATV from 'atvjs';
 
 const _ = ATV._;
 
-const sampleStreams = [
-	'http://s-delivery31.mxdcontent.net/v/9d8095be08a70e9bddce2c431e0e32c4.mp4?s=2nHDJYISVGEDFumbKluLxA&e=1667263407&_t=1667243126',
+const sampleStreams = [,
 	'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
 	'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
 	'https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8',

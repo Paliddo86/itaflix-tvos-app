@@ -41,7 +41,8 @@ var MoviesPage = ATV.Page.create({
     template: template,
     events: {
       highlight: 'onHighlight',
-      load: 'onLoad'
+      load: 'onLoad',
+      select: 'onSelect'
   },
   onLoad(event) {
       ATV.Ajax
@@ -69,6 +70,13 @@ var MoviesPage = ATV.Page.create({
 
         })
     }
+  },
+  onSelect(event) {
+    var ele = event.target;
+    var dataItem = ele.dataItem;
+
+    if (dataItem === undefined) return;
+    ATV.Navigation.navigate("movie-details", {movieId: dataItem.id});
   }
 });
 
