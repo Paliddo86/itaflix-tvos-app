@@ -7,16 +7,14 @@ var MovieDetailsPage = ATV.Page.create({
 	name: 'movie-details',
 	template: template,
 	ready(options, resolve, reject) {
-		let movieId = options.movieId;
-
 		ATV.Ajax
-			.get(BACKEND.movieDetails(movieId))
+			.post(BACKEND.movieInfo, {headers: {"Content-Type": "application/json"}, data: JSON.stringify({id: options.id, slug: options.slug})})
 			.then((xhr) => {
 				resolve(xhr.response.movie);
 			}, (xhr) => {
 				// error
-				ATV.Navigation.presentModal(errorTpl({title: "Errore", message: "Errore nel recupero dei dati, controllare il server"}));
-				reject();
+				ATV.Navigation.presentModal(errorTpl({title: "Errore", message: "Errore nel recupero dei dati: "  + xhr.response.error}));
+				reject(xhr);
 			})
 	}
 });

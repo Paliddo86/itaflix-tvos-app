@@ -17,6 +17,7 @@ function fillMovieCollection(movies) {
       dataItem.title = movie.title;
       dataItem.id = movie.id;
       dataItem.language = movie.lang;
+      dataItem.slug = movie.slug;
       dataItems.push(dataItem);
   }
 
@@ -44,7 +45,7 @@ var MoviesPage = ATV.Page.create({
       load: 'onLoad',
       select: 'onSelect'
   },
-  onLoad(event) {
+  onLoad(_) {
       ATV.Ajax
         .get(BACKEND.movies(loadedMoviePage++))
         .then((xhr) => {
@@ -59,7 +60,7 @@ var MoviesPage = ATV.Page.create({
     var dataItem = ele.dataItem;
 
     if (dataItem === undefined) return;
-    if (dataItem.identifier && parseInt(dataItem.identifier) >= moviesCount - 10) {
+    if (dataItem.identifier && parseInt(dataItem.identifier) >= moviesCount / 2) {
       ATV.Ajax
         .get(BACKEND.movies(loadedMoviePage++))
         .then((xhr) => {
@@ -74,9 +75,10 @@ var MoviesPage = ATV.Page.create({
   onSelect(event) {
     var ele = event.target;
     var dataItem = ele.dataItem;
+    console.log("dataItem select", dataItem)
 
     if (dataItem === undefined) return;
-    ATV.Navigation.navigate("movie-details", {movieId: dataItem.id});
+    ATV.Navigation.navigate("movie-details", {id: dataItem.id, slug: dataItem.slug});
   }
 });
 
