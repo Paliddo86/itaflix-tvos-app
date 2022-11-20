@@ -5,8 +5,9 @@
 	  </banner>
 	  <list>
 		 <section>
+			{{#each allgenres}}
 			<listItemLockup>
-				<title class="text-highlight-primary scrollTextOnHighlight">Recenti</title>
+				<title class="text-highlight-primary scrollTextOnHighlight">{{name}}</title>
 				<decorationImage src="{{img_url 'chevron.png'}}" width="14" height="22"/>
 				<relatedContent>
 					<grid>
@@ -21,6 +22,7 @@
 				  </grid>
 			   </relatedContent>
 			</listItemLockup>
+			{{/each}}
 		 </section>
 	  </list>
    </catalogTemplate>

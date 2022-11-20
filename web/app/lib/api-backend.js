@@ -22,7 +22,7 @@ const toUrl = (url = '', params = {}) => {
 const buildUrl = (path, params) => toUrl(`${backendUrl}${path}`, params);
 
 const backend = {
-	movies(page) {  return buildUrl(`movies/${page}`, {}); },
+	movies(page, type, genre) {  return buildUrl(`movies/${page}`, {type, genre}); },
 	get movieInfo() { return buildUrl(`movie/info`); },
 	get stream() { return buildUrl("movie/streamings"); }
 }
